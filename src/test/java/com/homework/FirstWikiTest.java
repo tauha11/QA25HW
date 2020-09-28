@@ -25,7 +25,8 @@ public class FirstWikiTest {
         wd.findElement(By.name("search")).sendKeys("History" + Keys.ENTER);
         wd.findElement(By.id("searchInput")).click();
         String text = wd.findElement(By.tagName("h1")).getText();
-        Assert.assertEquals(text.toLowerCase(), "history") ;
+        Assert.assertEquals(text.toLowerCase(), "history");
+
     }
     @AfterMethod
     public void TearDown(){
