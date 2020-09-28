@@ -9,26 +9,26 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class FirstWikiTest {
+public class FirstNextTest {
     WebDriver wd;
 
     @BeforeMethod
-    public void SetUp(){
+    public void SetUP(){
         wd = new ChromeDriver();
-        wd.get("https://www.wikipedia.org/");
+        wd.get("https://www.next.co.il/en");
     }
 
     @Test
-    public void OpenWikiTest(){
-        System.out.println("Site Wiki opened!!!");
-        wd.findElement(By.name("search")).click();
-        wd.findElement(By.name("search")).sendKeys("History" + Keys.ENTER);
-        wd.findElement(By.id("searchInput")).click();
+    public void OpenNextSite(){
+        System.out.println("Site Next opened!!!");
+        wd.findElement(By.name("w")).click();
+        wd.findElement(By.name("w")).sendKeys("dress baby" + Keys.ENTER);
+        wd.findElement(By.id("sli_search_1")).click();
         String text = wd.findElement(By.tagName("h1")).getText();
-        Assert.assertEquals(text.toLowerCase(), "history") ;
+        Assert.assertEquals(text.toLowerCase(), "dress baby");
     }
     @AfterMethod
-    public void TearDown(){
+    public void TerarDown(){
         wd.quit();
     }
 }
